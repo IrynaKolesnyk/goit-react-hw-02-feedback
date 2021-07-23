@@ -16,19 +16,19 @@ const FeedbackOptionsStyled = styled.div`
     }
   }
 
-  .goodBtn {
+  .good {
     &:hover {
       background-color: #76ba1b;
     }
   }
 
-  .neutralBtn {
+  .neutral {
     &:hover {
       background-color: #ffdfc4;
     }
   }
 
-  .badBtn {
+  .bad {
     &:hover {
       background-color: #ff483f;
     }

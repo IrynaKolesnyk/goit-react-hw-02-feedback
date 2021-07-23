@@ -1,34 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
 import FeedbackOptionsStyled from "./FeedbackOptionsStyled";
+import { v4 as uuidv4 } from "uuid";
 
-const FeedbackOptions = ({ onLeaveFeedback }) => {
+const FeedbackOptions = ({ onLeaveFeedback, options }) => {
   return (
     <FeedbackOptionsStyled>
-      <button
-        type="button"
-        name="good"
-        className="goodBtn"
-        onClick={onLeaveFeedback}
-      >
-        Good
-      </button>
-      <button
-        type="button"
-        name="neutral"
-        className="neutralBtn"
-        onClick={onLeaveFeedback}
-      >
-        Neutral
-      </button>
-      <button
-        type="button"
-        name="bad"
-        className="badBtn"
-        onClick={onLeaveFeedback}
-      >
-        Bad
-      </button>
+      {options.map((option) => {
+        return (
+          <button
+            key={uuidv4()}
+            type="button"
+            name={option.name}
+            className={option.name}
+            onClick={onLeaveFeedback}
+          >
+            {option.title}
+          </button>
+        );
+      })}
     </FeedbackOptionsStyled>
   );
 };

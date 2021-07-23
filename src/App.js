@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import FeedbackOptions from "./components/FeedbackOptions";
 import Section from "./components/Section";
 import Statistics from "./components/Statistics";
+import options from "./data/options.json";
 
 class App extends Component {
   state = {
@@ -37,11 +38,12 @@ class App extends Component {
   render() {
     const totalFeedback = this.countTotalFeedback();
     const positivePercentage = this.positivePercentage();
+
     return (
       <>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={this.state}
+            options={options}
             onLeaveFeedback={this.feedbackIncrement}
           />
         </Section>
